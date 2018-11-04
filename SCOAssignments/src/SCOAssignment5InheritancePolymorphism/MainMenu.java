@@ -38,7 +38,12 @@ public class MainMenu extends Menu
                 mp.run();
                 break;
             case 2:
-                System.out.println("Not implemented yet");
+                String[] t =
+                {
+                    "Select Student", "Show Average Grades for all Students", "Show all students"
+                };
+                MenuStudent ms = new MenuStudent("Student Menu", t, persons);
+                ms.run();
                 break;
             case 3:
                 System.out.println("Not implemented yet");

@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Wezzy
  */
-public class MenuPersonsEditor extends Menu
+public class MenuPersonEditor extends Menu
 {
 
     PersonManager persons;
@@ -21,7 +21,7 @@ public class MenuPersonsEditor extends Menu
     String[] menuItems;
     Scanner scanner;
 
-    public MenuPersonsEditor(String header, String[] menuItems, PersonManager persons, int id)
+    public MenuPersonEditor(String header, String[] menuItems, PersonManager persons, int id)
     {
         super(header, menuItems);
         this.persons = persons;
@@ -44,11 +44,18 @@ public class MenuPersonsEditor extends Menu
                 s = scanner.nextLine();
                 persons.getPerson(id).setName(s);
                 header = persons.getPerson(id).getName();
-                refreshPrints("Editing " + id + " " + header, menuItems);
+                refreshPrints("Showing " + id + " " + header, menuItems);
                 break;
             case 2:
                 System.out.println("Insert Email:");
                 persons.getPerson(id).setEmail(scanner.next());
+                break;
+            case 3:
+                clear();
+                System.out.println(persons.getPerson(id));
+                System.out.println("Press Enter to exit");
+                scanner.nextLine();
+                clear();
                 break;
         }
     }

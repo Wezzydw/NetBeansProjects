@@ -58,6 +58,7 @@ public class PersonTest
         for (Student x : list1)
         {
             System.out.println(x);
+            
         }
         list2 = pm.getAllTeacher();
         for (Teacher x : list2)

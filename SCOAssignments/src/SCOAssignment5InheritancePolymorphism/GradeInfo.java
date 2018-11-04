@@ -31,6 +31,6 @@ public class GradeInfo
     }
     public String toString()
     {
-        return "";
+        return "Subject: " + subject + " Grade: " + grade;
     }
 }

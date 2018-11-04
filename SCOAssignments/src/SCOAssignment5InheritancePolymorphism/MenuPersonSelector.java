@@ -32,15 +32,15 @@ public class MenuPersonSelector extends Menu
         clear();
         if (option > 0)
         {
-            String sid = menuItems[option - 1].substring(0, 3);
+            String sid = menuItems[option - 1].substring(4, 7);
             int id = Integer.parseInt(sid);
             Person p = persons.getPerson(id);
-            String s = "Editing ID: " + p.getId() + "Name; " + p.getName();
+            String s = "Editing ID: " + p.getId() + " Name; " + p.getName();
             String[] s1 =
             {
-                "Set Name", "Set Email"
+                "Set Name", "Set Email", "Show details"
             };
-            MenuPersonsEditor mpe = new MenuPersonsEditor(s, s1, persons, p.getId());
+            MenuPersonEditor mpe = new MenuPersonEditor(s, s1, persons, p.getId());
             mpe.run();
             for (int i = 0; i < persons.getAllPersons().size(); i++)
             {
