@@ -40,6 +40,7 @@ public class MenuStudentSelector extends Menu
             {
                 "Show Gradereport", "Show education", "Show Average grade", "Show grade in specific subjects", "Set Name", "Set Email", "Add grade"
             };
+            
             MenuStudentEditor mse = new MenuStudentEditor(s, s1, persons, p.getId());
             mse.run();
             for (int i = 0; i < persons.getAllStudents().size(); i++)
