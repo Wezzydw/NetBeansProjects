@@ -35,24 +35,23 @@ public class MenuPersonEditor extends Menu
     protected void doAction(int option)
     {
         clear();
-
+        Person p = persons.getPerson(id);
         switch (option)
         {
             case 1:
                 String s;
                 System.out.println("Insert Name:");
-                s = scanner.nextLine();
-                persons.getPerson(id).setName(s);
-                header = persons.getPerson(id).getName();
-                refreshPrints("Showing " + id + " " + header, menuItems);
+                p.setName(scanner.nextLine());
+                String headerN = p.getName();
+                refreshPrints("Showing " + id + " " + headerN, menuItems);
                 break;
             case 2:
                 System.out.println("Insert Email:");
-                persons.getPerson(id).setEmail(scanner.next());
+                p.setEmail(scanner.next());
                 break;
             case 3:
                 clear();
-                System.out.println(persons.getPerson(id));
+                System.out.println(p);
                 System.out.println("Press Enter to exit");
                 scanner.nextLine();
                 clear();

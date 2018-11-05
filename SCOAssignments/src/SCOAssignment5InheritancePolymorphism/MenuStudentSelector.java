@@ -43,11 +43,12 @@ public class MenuStudentSelector extends Menu
             
             MenuStudentEditor mse = new MenuStudentEditor(s, s1, persons, p.getId());
             mse.run();
-            for (int i = 0; i < persons.getAllStudents().size(); i++)
+            List<Student> stud = persons.getAllStudents();
+            for (int i = 0; i < stud.size(); i++)
             {
-                menuItems[i] = "ID: " +persons.getAllStudents().get(i).getId() + " " + "Name: " + persons.getAllStudents().get(i).getName();
+                menuItems[i] = "ID: " + stud.get(i).getId() + " Name: " + stud.get(i).getName();
             }
-            refreshPrints(header, menuItems);
+             refreshPrints(header, menuItems);
         }
 
     }

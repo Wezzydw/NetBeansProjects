@@ -34,8 +34,6 @@ public class MenuPerson extends Menu
         
         switch (option)
         {
-            case 0:
-                break;
             case 1:
                 String[] namesAndId = new String[persons.getAllPersons().size()];
                 for (int i = 0; i < persons.getAllPersons().size(); i++)
