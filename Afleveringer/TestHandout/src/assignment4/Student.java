@@ -123,6 +123,12 @@ public class Student
 
         if (name.contains(" "))
         {
+            String[] test = name.split(" ");
+            for (int i = 0; i< test.length; i++)
+            {
+                
+            System.out.println(test[i]);
+            }
             this.name = name;
             return true;
         }

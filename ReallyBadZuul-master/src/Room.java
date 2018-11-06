@@ -1,6 +1,7 @@
 
-import com.sun.org.glassfish.gmbal.Description;
+//import com.sun.org.glassfish.gmbal.Description;
 import java.util.HashMap;
+import java.util.Set;
 
 
 /**
@@ -65,11 +66,26 @@ public class Room
 
     public Room getExit(String direction)
     {
-
-        exits.get(direction);
         
-        return null;
+        return exits.get(direction);
+        
+        
     }
+    
+     public String getExitString()
+    {
+        String returnString = "Exits:";
+        Set<String> keys = exits.keySet();
+        for (String exit : keys)
+        {
+            returnString += " " + exit;
+        }
+        return returnString;
+    }
+     public String getLongDescription()
+     {
+         return "You are " + description + "\n" + getExitString();
+     }
 //    int count = 0;
 //    
 //    for(int i = 0; i <str.lenght(); i++)
