@@ -46,16 +46,16 @@ public class Game
         cellar = new Room("Dark");
 
         // initialise room exits
-//        outside.setExits(null, theater, lab, pub, null, null);
         outside.setExits("east", theater);
         outside.setExits("south", lab);
         outside.setExits("west", pub);
         office.setExits("down", cellar);
         cellar.setExits("up", office);
-//        theater.setExits(null, null, null, outside, null, null);
-//        pub.setExits(null, outside, null, null, null, null);
-//        lab.setExits(outside, office, null, null, null, null);
-//        office.setExits(null, null, null, lab, null, null);
+        theater.setExits("west", outside);
+        pub.setExits("east", outside);
+        lab.setExits("north", outside);
+        lab.setExits("east", office);
+        office.setExits("west", lab);
 
         currentRoom = outside;  // start game outside
     }
