@@ -36,7 +36,8 @@ public class MenuStudent extends Menu
                 {
                     namesAndId[i] = "ID: " + students.get(i).getId() + " Name: " + students.get(i).getName();
                 }
-                MenuStudentSelector mss = new MenuStudentSelector("Editing details of persons\nSelect one", namesAndId, persons);
+                MenuStudentSelector mss = new MenuStudentSelector(
+                        "Editing details of persons\nSelect one", namesAndId, persons);
                 mss.run();
                 break;
             case 2:
@@ -44,7 +45,6 @@ public class MenuStudent extends Menu
                 for (Student x: students)
                 {
                     grades += x.getAverageGrade();
-                    
                 }
                 System.out.println("Average of all grades: " + grades/students.size());
                 System.out.println("Press Enter to exit");

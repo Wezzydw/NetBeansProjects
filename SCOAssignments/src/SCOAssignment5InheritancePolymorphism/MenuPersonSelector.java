@@ -5,6 +5,7 @@
  */
 package SCOAssignment5InheritancePolymorphism;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -42,9 +43,10 @@ public class MenuPersonSelector extends Menu
             };
             MenuPersonEditor mpe = new MenuPersonEditor(s, s1, persons, p.getId());
             mpe.run();
-            for (int i = 0; i < persons.getAllPersons().size(); i++)
+            List<Person> pl = persons.getAllPersons();
+            for (int i = 0; i < pl.size(); i++)
             {
-                menuItems[i] = persons.getAllPersons().get(i).getId() + " " + persons.getAllPersons().get(i).getName();
+                menuItems[i] = pl.get(i).getId() + " " +pl.get(i).getName();
             }
             refreshPrints(header, menuItems);
         }

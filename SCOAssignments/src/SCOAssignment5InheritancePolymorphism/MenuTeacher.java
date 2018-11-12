@@ -7,9 +7,20 @@ package SCOAssignment5InheritancePolymorphism;
 
 /**
  *
- * @author Wezzy
+ * @author WezzyLaptop
  */
-public class MenuTeacher
+public class MenuTeacher extends Menu
 {
+
+    public MenuTeacher(String header, String[] menuItems)
+    {
+        super(header, menuItems);
+    }
+
+    @Override
+    protected void doAction(int option)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

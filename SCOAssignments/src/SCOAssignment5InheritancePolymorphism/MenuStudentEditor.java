@@ -32,7 +32,7 @@ public class MenuStudentEditor extends Menu
         this.menuItems = menuItems;
         scanner = new Scanner(System.in);
         students = persons.getAllStudents();
-
+        
     }
 
     @Override
@@ -40,10 +40,8 @@ public class MenuStudentEditor extends Menu
     {
         clear();
         Student stud = (Student)persons.getPerson(id);
-        //"Show Gradereport", "Show education", "Show Average grade", "Show grade in specific subject", "Set Name", "Set Email", "Add grade"
         switch (option)
         {
-           
             case 1:
                 clear();
                 System.out.println("Gradereport: " + stud.getGradeReport());
@@ -69,7 +67,6 @@ public class MenuStudentEditor extends Menu
                 clear();
                 System.out.println("Enter one of the following subjects");
                 ArrayList<String> sub = new ArrayList();
-                
                 for (GradeInfo g : stud.getGradeReport())
                 {
                     for (int i = 0; i < sub.size(); i++)
@@ -78,7 +75,6 @@ public class MenuStudentEditor extends Menu
                         {
                             sub.add(g.getSubject());
                         }
-                        
                     }
                     if (sub.isEmpty())
                             sub.add(g.getSubject());
@@ -88,35 +84,30 @@ public class MenuStudentEditor extends Menu
                     System.out.println(s1);
                 }
                 String check = scanner.nextLine();
-                int index = -2;
+                int index = -1;
                 for (int i = 0; i < sub.size(); i++)
                 {
-
                     if(sub.get(i).equals(check))
                     {
                         index = i;
                         break;
                     }
-                    
                 }
-                
                 System.out.println("Grade in " + check + " is: " + stud.getGrade(sub.get(index)));
                 System.out.println("Press Enter to exit");
                 scanner.nextLine();
                 clear();
                 break;
             case 5:
-                String s;
                 System.out.println("Insert Name:");
-                s = scanner.nextLine();
-                persons.getPerson(id).setName(s);
-                header = persons.getPerson(id).getName();
+                stud.setName(scanner.nextLine());
+                String headerN = stud.getName();
                 clear();
-                refreshPrints("Showing ID: " + id + " Name: " + header, menuItems);
+                refreshPrints("Showing ID: " + id + " Name: " + headerN, menuItems);
                 break;
             case 6:
                 System.out.println("Insert Email:");
-                persons.getPerson(id).setEmail(scanner.next());
+                stud.setEmail(scanner.next());
                 break;
             case 7:
                 clear();
@@ -128,7 +119,6 @@ public class MenuStudentEditor extends Menu
                 stud.addGrade(grade);
                 clear();
                 break;
-        }
+        }   
     }
-
 }
